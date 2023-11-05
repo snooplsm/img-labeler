@@ -1,11 +1,11 @@
 # img-labeler
 
-### Live Demo Here https://erikbernheim.github.io/img-labeler/
+### Live Demo Here https://pi.wmwm.us/img-labeler/
 
 ![Landing Image](https://raw.githubusercontent.com/erikbernheim/img-labeler/master/docs/git_landing_img.png)
 
 ## img-labeler recommended workflow
-Step 0: Visit the comma10k img directory and copy the direct image address of the image you want to label: https://github.com/commaai/comma10k/tree/master/imgs
+Step 0: Visit the comma10k img directory and copy the direct image address of the image you want to label: https://github.com/snooplsm/reported10k/tree/master/imgs
 Right-click on the image to copy its address.
 
 Step 1: Launch the img-labeler app from the URL above, and paste the URL into the Image URL box.
@@ -25,7 +25,7 @@ Step 7: Save your image
 
 
 ### Upload your labeled images to GitHub  and make a Pull Request
-Step 1: Fork comma10k https://github.com/commaai/comma10k/
+Step 1: Fork comma10k https://github.com/snooplsm/reported10k
 
 Step 2: Go to the mask directory.
 

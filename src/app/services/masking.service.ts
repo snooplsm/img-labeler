@@ -23,22 +23,22 @@ export class MaskingService {
   // TODO: This is a hack, do this right (using a model?)!
   public imgDimensionConfig = {
     "imgs": {
-      width: 1164,
-      height: 874,
-      canvasWidth: 1250,
-      canvasHeight: 950
+      width: 512,
+      height: 512,
+      canvasWidth: 512,
+      canvasHeight: 512
     },
     "imgs2": {
-      width: 1928,
-      height: 1208,
-      canvasWidth: 2014,
-      canvasHeight: 1284
+      width: 512,
+      height: 512,
+      canvasWidth: 1024,
+      canvasHeight: 1024
     },
     "imgsd": {
-      width: 1928,
-      height: 1208,
-      canvasWidth: 2014,
-      canvasHeight: 1284
+      width: 512,
+      height: 512,
+      canvasWidth: 1024,
+      canvasHeight: 1024
     }
   };
 
