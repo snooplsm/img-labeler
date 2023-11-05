@@ -50,7 +50,7 @@ export class GitManageComponent implements OnInit {
   }
 
   public githubAuthenticate() {
-    const s = window.open('https://github.com/login/oauth/authorize?client_id=efab4921711c71a51b5b&scope=public_repo', '_blank');
+    const s = window.open('https://github.com/login/oauth/authorize?client_id=Iv1.bb95ef788cf51da0&scope=public_repo', '_blank');
     const timer = setInterval(() => {
             if (s.closed) {
                 if (localStorage.getItem('gitToken') === 'ERROR') {

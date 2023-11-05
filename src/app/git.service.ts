@@ -20,7 +20,7 @@ export class GitService {
   
   public getGithubCode(): Observable<any> {
     const url = 'https://github.com/login/oauth/authorize';
-    let params = new HttpParams().set('client_id', 'efab4921711c71a51b5b');
+    let params = new HttpParams().set('client_id', 'Iv1.bb95ef788cf51da0');
     params = params.set('scope', 'public_repo');
     return this.http.get(url, {params});
   }
@@ -44,19 +44,19 @@ export class GitService {
 
   public getRepoBranches(user: string): Observable<any> {
     this.setHeaders();
-    const url = `https://api.github.com/repos/${user}/comma10k/branches`;
+    const url = `https://api.github.com/repos/${user}/reported10k/branches`;
     return this.http.get(url, {headers: this.gitTokenHeader});
   }
 
   public createCommit(user: string, message: string): Observable<any> {
     this.setHeaders();
-    const url = `https://api.github.com/repos/${user}/comma10k/branches`;
+    const url = `https://api.github.com/repos/${user}/reported10k/branches`;
     return this.http.get(url, {headers: this.gitTokenHeader});
   }
 
   public getTree(user: string, sha: string): Observable<any> {
     this.setHeaders();
-    const url = `https://api.github.com/repos/${user}/comma10k/git/trees/${sha}`;
+    const url = `https://api.github.com/repos/${user}/reported10k/git/trees/${sha}`;
     return this.http.get(url, {headers: this.gitTokenHeader});
   }
 
@@ -72,12 +72,12 @@ export class GitService {
       'Content-Type':  'application/json',
       'Authorization': localStorage.getItem('gitToken')
     });
-    let url = `https://api.github.com/repos/${user}/comma10k/contents/masks/${imageName}`;
+    let url = `https://api.github.com/repos/${user}/reported10k/contents/masks/${imageName}`;
     if(imageName.indexOf('_') === 5){
-      url = `https://api.github.com/repos/${user}/comma10k/contents/masks2/${imageName}`;
+      url = `https://api.github.com/repos/${user}/reported10k/contents/masks2/${imageName}`;
     }
     if(imageName.indexOf('_') === -1){
-      url = `https://api.github.com/repos/${user}/comma10k/contents/masksd/${imageName}`;
+      url = `https://api.github.com/repos/${user}/reported10k/contents/masksd/${imageName}`;
     }
     return this.http.put(url, body, {headers: header});
   }

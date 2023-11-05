@@ -338,8 +338,8 @@ export class DrawingCanvasComponent implements OnInit, AfterViewInit {
     }
 
     public updateImageByNumber(): void {
-        this.svg.style('background-image', `url('https://raw.githubusercontent.com/commaai/comma10k/master/imgs/${this.lut.getUrl(this.imageNumber.nativeElement.value.padStart(4, '0'))}')`);
-        this.url.nativeElement.value = `https://raw.githubusercontent.com/commaai/comma10k/master/imgs/${this.lut.getUrl(this.imageNumber.nativeElement.value.padStart(4, '0'))}`;
+        this.svg.style('background-image', `url('https://raw.githubusercontent.com/snooplsm/reported10k/master/imgs/${this.lut.getUrl(this.imageNumber.nativeElement.value.padStart(4, '0'))}')`);
+        this.url.nativeElement.value = `https://raw.githubusercontent.com/snooplsm/reported10k/master/imgs/${this.lut.getUrl(this.imageNumber.nativeElement.value.padStart(4, '0'))}`;
         this.imageNumber.nativeElement.value = this.imageNumber.nativeElement.value.padStart(4, '0');
     }
 
@@ -509,13 +509,23 @@ export class DrawingCanvasComponent implements OnInit, AfterViewInit {
         this.svg.select('g.drawPoly').remove();
     }
 
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardDownEvent(event: KeyboardEvent) {
+        console.log("keydown " + event.metaKey);
+        if (event.code === 'KeyZ' && (event.metaKey === true)) { 
+            this.undo(); 
+        }
+    }
+
 
     @HostListener('document:keyup', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
         if (event.code === 'Escape') { this.deleteCurrentLayer(); }
         if (event.code === 'BracketLeft') { this.toggleControlPoints(); }
-        if (event.code === 'KeyO') { this.previewExport(); }
-        if (event.code === 'KeyZ' && event.ctrlKey === true) { this.undo(); }
+        if (event.code === 'KeyO') { this.previewExport(); }    
+        if (event.code === 'KeyZ' && (event.ctrlKey === true || event.metaKey === true)) { 
+            this.undo(); 
+        }
         if (event.code === 'Numpad0' || event.code === 'Digit0') { this.panZoomAPI.resetView() }
     }
 
